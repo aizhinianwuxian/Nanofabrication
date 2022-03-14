@@ -261,7 +261,7 @@ def grating_loopback(coupler_params, position=(0, 0), name='GRATING_LOOPBACK'):
         coupler_params=coupler_params1)
     wg10 = Waveguide.make_at_port(port=left_grating10.port)
     wg10.add_straight_segment(length=100).add_bend(angle=-pi / 2, radius=BEND_RADIUS)
-    wg10.add_straight_segment(length=117.3).add_bend(angle=-pi / 2, radius=BEND_RADIUS).add_straight_segment(length=100)
+    wg10.add_straight_segment(length=120).add_bend(angle=-pi / 2, radius=BEND_RADIUS).add_straight_segment(length=100)
     # left_grating10 = CornerstoneGratingCoupler().create_cornerstone_coupler_at_port(
     #     port=Port(origin=(1500, 0), angle=0, width=0.5)
     #     **coupler_params)
@@ -288,7 +288,7 @@ def grating_loopback(coupler_params, position=(0, 0), name='GRATING_LOOPBACK'):
         coupler_params=coupler_params2)
     wg20 = Waveguide.make_at_port(port=left_grating20.port)
     wg20.add_straight_segment(length=100).add_bend(angle=-pi / 2, radius=BEND_RADIUS)
-    wg20.add_straight_segment(length=117.3+127).add_bend(angle=-pi / 2, radius=BEND_RADIUS).add_straight_segment(length=100)
+    wg20.add_straight_segment(length=117.3+127+2.6).add_bend(angle=-pi / 2, radius=BEND_RADIUS).add_straight_segment(length=100)
     # left_grating10 = CornerstoneGratingCoupler().create_cornerstone_coupler_at_port(
     #     port=Port(origin=(1500, 0), angle=0, width=0.5)
     #     **coupler_params)
@@ -315,7 +315,7 @@ def grating_loopback(coupler_params, position=(0, 0), name='GRATING_LOOPBACK'):
         coupler_params=coupler_params3)
     wg30 = Waveguide.make_at_port(port=left_grating30.port)
     wg30.add_straight_segment(length=100).add_bend(angle=-pi / 2, radius=BEND_RADIUS)
-    wg30.add_straight_segment(length=117.3 + 127 + 127).add_bend(angle=-pi / 2, radius=BEND_RADIUS).add_straight_segment(length=100)
+    wg30.add_straight_segment(length=117.3 + 127 + 127 + 3).add_bend(angle=-pi / 2, radius=BEND_RADIUS).add_straight_segment(length=100)
     # left_grating10 = CornerstoneGratingCoupler().create_cornerstone_coupler_at_port(
     #     port=Port(origin=(1500, 0), angle=0, width=0.5)
     #     **coupler_params)
