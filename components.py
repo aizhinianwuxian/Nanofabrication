@@ -143,7 +143,7 @@ def grating_loopback(coupler_params, position=(0, 0), name='GRATING_LOOPBACK'):
     spiral_1 = Spiral.make_at_port(Port(origin=(0, -1000), angle=0, width=0.5), num=5, gap=10, inner_gap=50)
     wg = Waveguide.make_at_port(port=spiral_1.out_port)  # Create waveguide at the left grating port location
     wg1 = Waveguide.make_at_port(port=spiral_1.in_port)  # Create waveguide at the left grating port location
-    wg1.add_straight_segment(length=147).add_bend(angle=-pi / 2, radius=BEND_RADIUS)
+    wg1.add_straight_segment(length=147-12.92).add_bend(angle=-pi / 2, radius=BEND_RADIUS)
     wg.add_straight_segment(length=100).add_bend(angle=pi / 2, radius=BEND_RADIUS)  # Do some routing
     wg.add_straight_segment(length=205)
     # wg.add_straight_segment(length=10)
@@ -167,7 +167,7 @@ def grating_loopback(coupler_params, position=(0, 0), name='GRATING_LOOPBACK'):
     spiral_2 = Spiral.make_at_port(Port(origin=(500, -1000), angle=0, width=0.5), num=10, gap=10, inner_gap=50)
     wg2 = Waveguide.make_at_port(port=spiral_2.out_port)  # Create waveguide at the left grating port location
     wg3 = Waveguide.make_at_port(port=spiral_2.in_port)  # Create waveguide at the left grating port location
-    wg3.add_straight_segment(length=174).add_bend(angle=-pi / 2, radius=BEND_RADIUS)
+    wg3.add_straight_segment(length=174-12.92).add_bend(angle=-pi / 2, radius=BEND_RADIUS)
     wg2.add_straight_segment(length=200).add_bend(angle=pi / 2, radius=BEND_RADIUS)  # Do some routing
     wg2.add_straight_segment(length=305)
     # wg.add_straight_segment(length=10)
@@ -206,9 +206,9 @@ def grating_loopback(coupler_params, position=(0, 0), name='GRATING_LOOPBACK'):
 
     waveguide_1 = Waveguide.make_at_port(Port([1300, -1000], -pi / 2, 0.5))
     waveguide_1.add_bend(angle=- pi / 2, radius=BEND_RADIUS)
-    waveguide_1.add_straight_segment(100+47.6/2)
+    waveguide_1.add_straight_segment(100+47.6/2-12.92/2)
     resonator_1 = RingResonator.make_at_port(waveguide_1.current_port, gap=1, radius=50)
-    waveguide_1.add_straight_segment(100+47.6/2)
+    waveguide_1.add_straight_segment(100+47.6/2-12.92/2)
     waveguide_1.add_bend(angle=-pi / 2, radius=BEND_RADIUS)
     left_grating_1 = CornerstoneGratingCoupler().create_cornerstone_coupler_at_port(
         port=waveguide_1.current_port,
@@ -225,9 +225,9 @@ def grating_loopback(coupler_params, position=(0, 0), name='GRATING_LOOPBACK'):
 
     waveguide_2 = Waveguide.make_at_port(Port([1800, -1000], -pi / 2, 0.5))
     waveguide_2.add_bend(angle=- pi / 2, radius=BEND_RADIUS)
-    waveguide_2.add_straight_segment(100+47.6/2)
+    waveguide_2.add_straight_segment(100+47.6/2-12.92/2)
     resonator_2 = RingResonator.make_at_port(waveguide_2.current_port, gap=1, radius=100)
-    waveguide_2.add_straight_segment(100+47.6/2)
+    waveguide_2.add_straight_segment(100+47.6/2-12.92/2)
     waveguide_2.add_bend(angle=-pi / 2, radius=BEND_RADIUS)
     left_grating_2 = CornerstoneGratingCoupler().create_cornerstone_coupler_at_port(
         port=waveguide_2.current_port,
@@ -261,7 +261,7 @@ def grating_loopback(coupler_params, position=(0, 0), name='GRATING_LOOPBACK'):
         coupler_params=coupler_params1)
     wg10 = Waveguide.make_at_port(port=left_grating10.port)
     wg10.add_straight_segment(length=100).add_bend(angle=-pi / 2, radius=BEND_RADIUS)
-    wg10.add_straight_segment(length=120).add_bend(angle=-pi / 2, radius=BEND_RADIUS).add_straight_segment(length=100)
+    wg10.add_straight_segment(length=120-12.92).add_bend(angle=-pi / 2, radius=BEND_RADIUS).add_straight_segment(length=100)
     # left_grating10 = CornerstoneGratingCoupler().create_cornerstone_coupler_at_port(
     #     port=Port(origin=(1500, 0), angle=0, width=0.5)
     #     **coupler_params)
@@ -288,7 +288,7 @@ def grating_loopback(coupler_params, position=(0, 0), name='GRATING_LOOPBACK'):
         coupler_params=coupler_params2)
     wg20 = Waveguide.make_at_port(port=left_grating20.port)
     wg20.add_straight_segment(length=100).add_bend(angle=-pi / 2, radius=BEND_RADIUS)
-    wg20.add_straight_segment(length=117.3+127+2.6).add_bend(angle=-pi / 2, radius=BEND_RADIUS).add_straight_segment(length=100)
+    wg20.add_straight_segment(length=117.3+127+2.6-12.92).add_bend(angle=-pi / 2, radius=BEND_RADIUS).add_straight_segment(length=100)
     # left_grating10 = CornerstoneGratingCoupler().create_cornerstone_coupler_at_port(
     #     port=Port(origin=(1500, 0), angle=0, width=0.5)
     #     **coupler_params)
@@ -315,7 +315,7 @@ def grating_loopback(coupler_params, position=(0, 0), name='GRATING_LOOPBACK'):
         coupler_params=coupler_params3)
     wg30 = Waveguide.make_at_port(port=left_grating30.port)
     wg30.add_straight_segment(length=100).add_bend(angle=-pi / 2, radius=BEND_RADIUS)
-    wg30.add_straight_segment(length=117.3 + 127 + 127 + 3).add_bend(angle=-pi / 2, radius=BEND_RADIUS).add_straight_segment(length=100)
+    wg30.add_straight_segment(length=117.3 + 127 + 127 + 3-12.92).add_bend(angle=-pi / 2, radius=BEND_RADIUS).add_straight_segment(length=100)
     # left_grating10 = CornerstoneGratingCoupler().create_cornerstone_coupler_at_port(
     #     port=Port(origin=(1500, 0), angle=0, width=0.5)
     #     **coupler_params)
@@ -331,14 +331,14 @@ def grating_loopback(coupler_params, position=(0, 0), name='GRATING_LOOPBACK'):
 
     wg_111 = Waveguide.make_at_port(Port(origin=(3500, -500), angle=pi/2, width=0.5))
     wg_111.add_bend(angle=-pi / 2, radius=BEND_RADIUS)
-    wg_111.add_straight_segment(length=20+51.5)
+    wg_111.add_straight_segment(length=20+51.5-12.92/2)
     mzi_111 = MachZehnderInterferometerMMI.make_at_port(port=wg_111.current_port, splitter_length=33, splitter_width=7,
                                                       bend_radius=30, upper_vertical_length=10,
                                                       lower_vertical_length=10,
                                                       horizontal_length=25)
 
     wg_222 = Waveguide.make_at_port(port=mzi_111.port)
-    wg_222.add_straight_segment(length=20+51.5).add_bend(angle=-pi / 2, radius=BEND_RADIUS)
+    wg_222.add_straight_segment(length=20+51.5-12.92/2).add_bend(angle=-pi / 2, radius=BEND_RADIUS)
 
     grating_loopback_cell.add_to_layer(WAVEGUIDE_LAYER, wg_222, wg_111, mzi_111)
 
@@ -356,14 +356,14 @@ def grating_loopback(coupler_params, position=(0, 0), name='GRATING_LOOPBACK'):
 
     wg_01 = Waveguide.make_at_port(Port(origin=(4000, -500), angle=pi/2, width=0.5))
     wg_01.add_bend(angle=-pi / 2, radius=BEND_RADIUS)
-    wg_01.add_straight_segment(length=20+39)
+    wg_01.add_straight_segment(length=20+39-12.92/2)
     mzi_01 = MachZehnderInterferometerMMI.make_at_port(port=wg_01.current_port, splitter_length=33, splitter_width=7,
                                                       bend_radius=30, upper_vertical_length=10,
                                                       lower_vertical_length=10,
                                                       horizontal_length=50)
 
     wg_02 = Waveguide.make_at_port(port=mzi_01.port)
-    wg_02.add_straight_segment(length=20+39).add_bend(angle=-pi / 2, radius=BEND_RADIUS)
+    wg_02.add_straight_segment(length=20+39-12.92/2).add_bend(angle=-pi / 2, radius=BEND_RADIUS)
 
     grating_loopback_cell.add_to_layer(WAVEGUIDE_LAYER, wg_02, wg_01, mzi_01)
 
@@ -394,7 +394,7 @@ def grating_loopback(coupler_params, position=(0, 0), name='GRATING_LOOPBACK'):
                                                        horizontal_length=50)
     wg_04 = Waveguide.make_at_port(port=mzi_03.port)
     wg_04.add_straight_segment(length=20)
-    wg_04.add_straight_segment(length=71)
+    wg_04.add_straight_segment(length=71-12.92)
     wg_04.add_bend(angle=pi, radius=BEND_RADIUS).add_straight_segment(length=20)
 
     spiral_4 = Spiral.make_at_port(wg_04.current_port, num=5, gap=10, inner_gap=50)
