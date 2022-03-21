@@ -6,7 +6,6 @@ from gdshelpers.parts.coupler import GratingCoupler
 from shapely.geometry import Polygon
 from gdshelpers.layout import GridLayout
 
-
 from components import *
 from parameters import *
 
@@ -24,7 +23,7 @@ def generate_blank_gds(d_height=3000,
     outer_corners = [(0, 0), (d_width, 0), (d_width, d_height), (0, d_height)]
     polygon = Polygon(outer_corners)
 
-    layout = GridLayout(title='Yu-Kun_Feng_2120013_Nano_Mask_13.03.2022',
+    layout = GridLayout(title='Yu-Kun_FENG_Nano_CORNERSTONE_2022',
                         frame_layer=99,
                         text_layer=4,
                         region_layer_type=None,
@@ -46,7 +45,6 @@ def grating_sweep(layout_cell):
     and adds a sweep of grating coupler loopbacks
     with different periods.
     """
-    # 这里可以改周期
     # periods we will sweep over
     periods = np.linspace(0.67, 0.67, 1)
 
@@ -92,7 +90,7 @@ def populate_gds(layout_cell, polygon):
     design_space_cell.add_to_layer(99, polygon)
 
     # Save our GDS
-    design_space_cell.save('{0}Yu-Kun_Feng_Nanofab_example_design.gds'.format(savepath))
+    design_space_cell.save('{0}Nanofab_Yu-Kun_Feng_design.gds'.format(savepath))
     design_space_cell.show()
 
     return design_space_cell
